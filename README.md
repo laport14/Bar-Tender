@@ -11,7 +11,7 @@ The project is going to be a cocktail based website that allows the user the abi
 https://www.thecocktaildb.com/api.php
 
 - endpoints are not very user friendly, am going to use search by cocktail name as it provides the most data relative to the selection
-ex. below
+ex. below: 
 https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 ```
 {
