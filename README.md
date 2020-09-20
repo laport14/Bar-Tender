@@ -1,12 +1,10 @@
-# Project Overview
-
 ## Project Name
 
 # Bar-Tender
 
 ## Project Description
 
-The project is going to be a cocktail based website that allows the user the ability to select drinks based on the liquor preference. Under each of the parent liqour categories there will be a drop down of available drink names to choose from. When selecting the drink name, the drink name will be displayed, there will be a text field to show how the drink is made and a picture to represent the respective drink.
+The project is going to be a cocktail based website that allows the user the ability to select drinks based on the liquor preference. Under each of the parent liqour category there will be a drop down of available drink names to choose from. When selecting the drink name, the drink name will be displayed, there will be a text field to show how the drink is made and a picture to represent the respective drink.
 
 ## API and Data Sample
 
@@ -78,7 +76,7 @@ https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 
 ## Wireframes
 
--DeskTop Wireframe:
+-DeskTop & Mobile Wireframe:
 https://www.figma.com/file/zHi57d0hsaF6NnNnXMsaI1/Bar-Tender?node-id=0%3A1
 
 ### MVP/PostMVP
@@ -87,8 +85,8 @@ https://www.figma.com/file/zHi57d0hsaF6NnNnXMsaI1/Bar-Tender?node-id=0%3A1
 *These are examples only. Replace with your own MVP features.*
 
 - Find and use external api with pertinent data that meets project description requirements
-- Nav bar with the liquor choices and a drop down on 'click' for drink selection
-- After selecting the cocktail -> Display cocktail picture, intructions and name from external api data 
+- Nav bar with the liquor choices and a drop down under each liquor with the respective cocktails listed
+- After selecting the cocktail -> Display cocktail picture, intructions and name from external api data on page
 
 #### PostMVP  
 
@@ -97,7 +95,6 @@ https://www.figma.com/file/zHi57d0hsaF6NnNnXMsaI1/Bar-Tender?node-id=0%3A1
 - Pop up when loading the website that asks the user if they are 21 and up.
 - Animated CSS styling in the background of the webpage.
 - Incorporate external links to bar related gear and tutorials
-- A contact page and about me
 
 ## Project Schedule
 
