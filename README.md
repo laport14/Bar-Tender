@@ -104,7 +104,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |Sept 21| Project Approval & HTML Structure | Incomplete
 |Sept 22| CSS & Javascript Structure | Incomplete
 |Sept 23| Completion of Javascript & MVP requirements | Incomplete
@@ -123,9 +123,19 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| HTML Structure | M | 3hrs|  |  |
+| Pulling Drink Names from API | H | 3hrs|  |  |
+| Building Selector or Dropdown from Drink Names | H | 3hrs|  |  |
+| Selector data fulfilled for All Liquor types | H | 3hrs|  |  |
+| DOM work, w/ event listener for Drink Selection | H | 3hrs|  |  |
+| Pulling API data for Drink Info | H | 3hrs|  |  |
+| Appending Drink Data via the DOM | H | 3hrs|  |  |
+| Base Page styling | H | 2.5hrs|  |  |
+| Page Styling with Appended MTL | H | 3hrs|  |  |
+| JS Functions executing | H | 3hrs|  |  |
+| Debugging | H | 4hrs|  |  |
+| Troubleshooting and Adjustments | H | 4hrs|  |  |
+| Total | H | 37.5hrs|  |  |
 
 ## Code Snippet
 
