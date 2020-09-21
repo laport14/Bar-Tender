@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(12, 70, 12);
+  justify-content: space-between;
+  background-image: url(https://tinyurl.com/y27zcz4b);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+  background-color: rgba(201, 141, 30, 0.712);
+}
+
+h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.liquor {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: red;
+  
+}
+
+select {
+  background-color: transparent;
+  border: none;
+  color: orange;
+}
+
+
+
+footer {
+  padding: 20px;
+  color: black;
+}
+
+
