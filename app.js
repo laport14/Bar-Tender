@@ -40,7 +40,7 @@ async function getDrink(drink) {
 
   const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
   console.log(url)
-  // removeAll()
+  removeAll()
   try {
     const response = await axios.get(url)
     const drinkImg = response.data.drinks[0].strDrinkThumb
@@ -58,9 +58,10 @@ async function getDrink(drink) {
 }
 
 function drinkPic(drink) {
+  let content = document.querySelector('#content')
   const img = document.createElement('img')
   img.src = drink
-  document.querySelector('#content').append(img)
+  content.append(img)
   document.querySelector('#bourbon-drink').value = ''
 }
 
@@ -79,13 +80,13 @@ function drinkIntr(drink) {
 }
 
 
-// function removeAll() {
-//   const oldContent = document.querySelector('#content')
-//   while (oldContent.childNodes) {
-//     oldContent.removeChild(oldContent.childNodes)
-//   }
+function removeAll() {
+  const oldContent = document.querySelector('#content')
+  while (oldContent.lastChild) {
+    oldContent.removeChild(oldContent.lastChild)
+  }
 
-// }
+}
 
 const select = document.querySelector('#bourbon-drink')
 select.addEventListener('change', getValue) 

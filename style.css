@@ -51,9 +51,9 @@ div img {
 }
 
 #content {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   color: black;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
