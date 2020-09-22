@@ -10,22 +10,24 @@ body {
   min-height: 100vh;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
-  color: rgb(12, 70, 12);
+  color: rgb(223, 213, 213);
   justify-content: space-between;
-  background-image: url(https://tinyurl.com/y27zcz4b);
+  background-image: url(https://tinyurl.com/y4vozky6);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
-.header {
-  background-color: rgba(201, 141, 30, 0.712);
+
+.title {
+  background-color: rgb(68, 68, 68);
 }
 
 h3 {
   padding-top: 10px;
   padding-bottom: 10px;
+  
 }
 
 .liquor {
@@ -34,14 +36,15 @@ h3 {
   flex-wrap: wrap;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  color: red;
+  color: rgb(223, 213, 213);
+  background-color: rgb(51, 51, 51);
   
 }
 
 select {
   background-color: transparent;
   border: none;
-  color: rgba(0, 0, 0, 0.425);
+  color: rgba(129, 129, 129, 0.425);
 }
 
 
@@ -54,7 +57,7 @@ div img {
   /* display: flex;
   justify-content: center;
   flex-wrap: wrap; */
-  color: black;
+  color: rgb(223, 213, 213);
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   font-size: 24px;
@@ -62,8 +65,9 @@ div img {
 }
 
 footer {
-  padding: 20px;
+  padding: 10px;
   color: black;
+  background-color: rgb(245, 245, 257);
 }
 
 

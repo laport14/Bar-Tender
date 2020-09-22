@@ -45,87 +45,41 @@ async function getDrink(drink) {
     const response = await axios.get(url)
     const drinkImg = response.data.drinks[0].strDrinkThumb
     const drinkName = response.data.drinks[0].strDrink
-    const drinkInstruction = response.data.drinks[0].strInstructions
+    const drinkInstructions = response.data.drinks[0].strInstructions
     console.log(drinkName)
-    console.log(drinkInstruction)
+    console.log(drinkInstructions)
     console.log(drinkImg)
-    drinkNam(drinkName)
-    drinkPic(drinkImg)
-    drinkIntr(drinkInstruction)
+    // drinkNam(drinkName)
+    // drinkPic(drinkImg)
+    // drinkIntr(drinkInstruction)
+    drinkData(drinkName, drinkImg, drinkInstructions)
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
 
-function drinkPic(drink) {
-  let content = document.querySelector('#content')
-  const img = document.createElement('img')
-  img.src = drink
-  content.append(img)
-  document.querySelector('#bourbon-drink').value = ''
-}
-
-function drinkNam(drink) {
-  const name = document.createElement('p')
-  name.innerText = drink
-  document.querySelector('#content').append(name)
-  document.querySelector('#bourbon-drink').value = ''
-}
-
-function drinkIntr(drink) {
-  const instructions = document.createElement('p')
-  instructions.innerText = drink
-  document.querySelector('#content').append(instructions)
-  document.querySelector('#bourbon-drink').value = ''
-}
-
-
-function removeAll() {
-  const oldContent = document.querySelector('#content')
-  while (oldContent.lastChild) {
-    oldContent.removeChild(oldContent.lastChild)
-  }
-
-}
-
 const select = document.querySelector('#bourbon-drink')
 select.addEventListener('change', getValue) 
 
+//REFACTORED FUNCTIONS BELOW...
+function drinkData(drinkName, drinkPic, drinkIntructions) {
+  
+  const name = document.createElement('p')
+  name.innerText = drinkName
+  document.querySelector('#content').append(name)
+  document.querySelector('#bourbon-drink').value = ''
+  
+  let content = document.querySelector('#content')
+  const img = document.createElement('img')
+  img.src = drinkPic
+  content.append(img)
+  document.querySelector('#bourbon-drink').value = ''
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  const instructions = document.createElement('p')
+  instructions.innerText = drinkIntructions
+  document.querySelector('#content').append(instructions)
+  document.querySelector('#bourbon-drink').value = ''
+}
 
 
 
@@ -163,6 +117,18 @@ function optionValuesBrandy(lists) {
   });
   return results; 
 } 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Cognac
@@ -363,3 +329,14 @@ function optionValuesWhiskey(lists) {
   });
   return results; 
 } 
+
+
+
+//REMOVE ALL FUNCTION BELOW
+function removeAll() {
+  const oldContent = document.querySelector('#content')
+  while (oldContent.lastChild) {
+    oldContent.removeChild(oldContent.lastChild)
+  }
+
+}
