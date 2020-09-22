@@ -45,6 +45,21 @@ select {
 }
 
 
+div img {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: black;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  padding: 10px
+}
 
 footer {
   padding: 20px;
