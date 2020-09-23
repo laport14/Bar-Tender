@@ -27,69 +27,6 @@ function optionValues(lists) {
   return results; 
 } 
 
-
-function onDropDownChange(event) {
-  event.preventDefault()
-  const optionValue = event.srcElement.value //pointing to the element object.. grabbing the data and accessing it. 
-  console.log(optionValue)
-  getDrink(optionValue)
-}
-
-
-async function getDrink(drink) {
-
-  const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
-  console.log(url)
-  removeAll()
-  try {
-    const response = await axios.get(url)
-    const drinkImg = response.data.drinks[0].strDrinkThumb
-    const drinkName = response.data.drinks[0].strDrink
-    const drinkInstructions = response.data.drinks[0].strInstructions
-    console.log(drinkName)
-    console.log(drinkInstructions)
-    console.log(drinkImg)
-    drinkData(drinkName, drinkImg, drinkInstructions)
-  } catch (error) {
-    console.log(`Error: ${error}`)
-  }
-}
-
-function initializeDropDownListeners() {
-  document.querySelector('#bourbon-drink').addEventListener('change', onDropDownChange)
-  document.querySelector('#brandy-drink').addEventListener('change', onDropDownChange) 
-  document.querySelector('#cognac-drink').addEventListener('change', onDropdownChange) 
-  document.querySelector('#gin-drink').addEventListener('change', onDropdownChange) 
-  document.querySelector('#rum-drink').addEventListener('change', onDropdownChange) 
-  document.querySelector('#rye-drink').addEventListener('change', onDropdownChange) 
-  document.querySelector('#scotch-drink').addEventListener('change', onDropdownChange) 
-  document.querySelector('#vodka-drink').addEventListener('change', onDropdownChange) 
-  document.querySelector('#whiskey-drink').addEventListener('change', onDropdownChange) 
-  document.querySelector('#bourbon-drink').addEventListener('change', onDropdownChange) 
-}
-initializeDropDownListeners()
-
-//REFACTORED FUNCTIONS BELOW...
-function drinkData(drinkName, drinkPic, drinkIntructions) {
-  
-  const name = document.createElement('p')
-  name.innerText = drinkName
-  document.querySelector('#content').append(name)
-  document.querySelector('#bourbon-drink').value = ''
-  
-  let content = document.querySelector('#content')
-  const img = document.createElement('img')
-  img.src = drinkPic
-  content.append(img)
-  document.querySelector('#bourbon-drink').value = ''
-
-  const instructions = document.createElement('p')
-  instructions.innerText = drinkIntructions
-  document.querySelector('#content').append(instructions)
-  document.querySelector('#bourbon-drink').value = ''
-}
-
-
 //Brandy
 async function fetchDataBrandy(liquor) {
   const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquor}`
@@ -318,6 +255,83 @@ function optionValuesWhiskey(lists) {
   return results; 
 } 
 
+
+
+function onDropDownChange(event) {
+  event.preventDefault()
+  const drinkId = event.srcElement.id //retrieving the object that fired the change event! Janice helped with this one in order to refactor functions so I did not have to copy and change a ton of code..
+  const optionValue = document.querySelector(`#${drinkId}`).value
+  // debugger
+  console.log(optionValue)
+  getDrink(optionValue)
+}
+
+
+async function getDrink(drink) {
+
+  const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
+  console.log(url)
+  removeAll()
+  try {
+    const response = await axios.get(url)
+    const drinkImg = response.data.drinks[0].strDrinkThumb
+    const drinkName = response.data.drinks[0].strDrink
+    const drinkInstructions = response.data.drinks[0].strInstructions
+    console.log(drinkName)
+    console.log(drinkInstructions)
+    console.log(drinkImg)
+    // drinkNam(drinkName)
+    // drinkPic(drinkImg)
+    // drinkIntr(drinkInstruction)
+    drinkData(drinkName, drinkImg, drinkInstructions)
+  } catch (error) {
+    console.log(`Error: ${error}`)
+  }
+}
+
+
+function initializeDropDownListeners() {
+  document.querySelector('#bourbon-drink').addEventListener('change', onDropDownChange)
+  document.querySelector('#brandy-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#cognac-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#gin-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#rum-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#rye-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#scotch-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#vodka-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#whiskey-drink').addEventListener('change', onDropDownChange) 
+}
+initializeDropDownListeners()
+
+function drinkData(drinkName, drinkPic, drinkIntructions) {
+  
+  //
+  const name = document.createElement('p')
+  name.innerText = drinkName
+  document.querySelector('#content').append(name)
+  
+  //creating an image tag and appending below the name of the drink in the content div
+  let content = document.querySelector('#content')
+  const img = document.createElement('img')
+  img.src = drinkPic
+  content.append(img)
+
+  //creating a para for the drink instructions and appending below the image 
+  const instructions = document.createElement('p')
+  instructions.innerText = drinkIntructions
+  document.querySelector('#content').append(instructions)
+  
+  //clearing the select field value back to "choose a cocktail"
+  document.querySelector('#bourbon-drink').value = ''
+  document.querySelector('#brandy-drink').value = ''
+  document.querySelector('#cognac-drink').value = ''
+  document.querySelector('#gin-drink').value = ''
+  document.querySelector('#rum-drink').value = ''
+  document.querySelector('#rye-drink').value = ''
+  document.querySelector('#scotch-drink').value = ''
+  document.querySelector('#vodka-drink').value = ''
+  document.querySelector('#whiskey-drink').value = ''
+}
 
 
 //REMOVE ALL FUNCTION BELOW
