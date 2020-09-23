@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Montserrat', sans-serif;
   color: rgb(223, 213, 213);
   justify-content: space-between;
   background-image: url(https://tinyurl.com/y4vozky6);
@@ -34,8 +34,7 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   color: rgb(223, 213, 213);
   background-color: rgb(51, 51, 51);
   
@@ -51,6 +50,8 @@ select {
 div img {
   max-width: 400px;
   max-height: 400px;
+  opacity: 0.7;
+  border-radius: 5px;
 }
 
 #content {
@@ -58,14 +59,13 @@ div img {
   justify-content: center;
   flex-wrap: wrap; */
   color: rgb(223, 213, 213);
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   padding: 10px
 }
 
 footer {
-  padding: 10px;
+  padding: 5px;
   color: black;
   background-color: rgb(245, 245, 257);
 }

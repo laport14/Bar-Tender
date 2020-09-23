@@ -28,9 +28,9 @@ function optionValues(lists) {
 } 
 
 
-function getValue(e) {
-  e.preventDefault()
-  const optionValue = document.querySelector('#bourbon-drink').value
+function onDropDownChange(event) {
+  event.preventDefault()
+  const optionValue = event.srcElement.value //pointing to the element object.. grabbing the data and accessing it. 
   console.log(optionValue)
   getDrink(optionValue)
 }
@@ -49,17 +49,25 @@ async function getDrink(drink) {
     console.log(drinkName)
     console.log(drinkInstructions)
     console.log(drinkImg)
-    // drinkNam(drinkName)
-    // drinkPic(drinkImg)
-    // drinkIntr(drinkInstruction)
     drinkData(drinkName, drinkImg, drinkInstructions)
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
 
-const select = document.querySelector('#bourbon-drink')
-select.addEventListener('change', getValue) 
+function initializeDropDownListeners() {
+  document.querySelector('#bourbon-drink').addEventListener('change', onDropDownChange)
+  document.querySelector('#brandy-drink').addEventListener('change', onDropDownChange) 
+  document.querySelector('#cognac-drink').addEventListener('change', onDropdownChange) 
+  document.querySelector('#gin-drink').addEventListener('change', onDropdownChange) 
+  document.querySelector('#rum-drink').addEventListener('change', onDropdownChange) 
+  document.querySelector('#rye-drink').addEventListener('change', onDropdownChange) 
+  document.querySelector('#scotch-drink').addEventListener('change', onDropdownChange) 
+  document.querySelector('#vodka-drink').addEventListener('change', onDropdownChange) 
+  document.querySelector('#whiskey-drink').addEventListener('change', onDropdownChange) 
+  document.querySelector('#bourbon-drink').addEventListener('change', onDropdownChange) 
+}
+initializeDropDownListeners()
 
 //REFACTORED FUNCTIONS BELOW...
 function drinkData(drinkName, drinkPic, drinkIntructions) {
@@ -80,14 +88,6 @@ function drinkData(drinkName, drinkPic, drinkIntructions) {
   document.querySelector('#content').append(instructions)
   document.querySelector('#bourbon-drink').value = ''
 }
-
-
-
-
-
-
-
-
 
 
 //Brandy
@@ -117,18 +117,6 @@ function optionValuesBrandy(lists) {
   });
   return results; 
 } 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Cognac
