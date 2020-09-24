@@ -15,6 +15,7 @@ async function fetchData(liquor) {
 
 fetchData('Bourbon')
 
+//FOR EACH 
 function optionValues(lists) {
   // console.log(lists)
   const select = document.querySelector('#bourbon-drink')
@@ -256,17 +257,17 @@ function optionValuesWhiskey(lists) {
 } 
 
 
-
+//TARGETS THE VALUE OF THE CHANGE EVENT FOR ALL LIQUOR TYPES, RETRIEVES THE DATA AND IS THE LISTENER FOR THE USER CHANGE EVENT
 function onDropDownChange(event) {
   event.preventDefault()
-  const drinkId = event.srcElement.id //retrieving the object that fired the change event! Janice helped with this one in order to refactor functions so I did not have to copy and change a ton of code..
+  const drinkId = event.srcElement.id //retrieving the object that fired the change event! Janice helped with this one. 
   const optionValue = document.querySelector(`#${drinkId}`).value
   // debugger
   console.log(optionValue)
   getDrink(optionValue)
 }
 
-
+//PULLING THE DRINK API DATA AND PASSING THROUGH THE APPENDED MATERIAL 
 async function getDrink(drink) {
 
   const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
@@ -277,19 +278,120 @@ async function getDrink(drink) {
     const drinkImg = response.data.drinks[0].strDrinkThumb
     const drinkName = response.data.drinks[0].strDrink
     const drinkInstructions = response.data.drinks[0].strInstructions
-    console.log(drinkName)
-    console.log(drinkInstructions)
-    console.log(drinkImg)
-    // drinkNam(drinkName)
-    // drinkPic(drinkImg)
-    // drinkIntr(drinkInstruction)
-    drinkData(drinkName, drinkImg, drinkInstructions)
+    const instruction = `Instructions: ${drinkInstructions}`
+    
+    let drinkRecipe = 'Ingredients: '
+    let drinkIngredients1 = response.data.drinks[0].strIngredient1  
+    let drinkMeasurements1 = response.data.drinks[0].strMeasure1
+    let drinkRecipe1 = `${drinkMeasurements1} ${drinkIngredients1}`
+    if (drinkRecipe1 !== 'null null') {
+      drinkRecipe = `Ingredients: ${drinkRecipe1}`
+    } 
+    let drinkIngredients2 = response.data.drinks[0].strIngredient2
+    let drinkMeasurements2 = response.data.drinks[0].strMeasure2
+    let drinkRecipe2 = ` ${drinkMeasurements2} ${drinkIngredients2} `
+    if (drinkRecipe2 !== ' null null ') {
+      drinkRecipe += drinkRecipe2
+    }
+
+    let drinkIngredients3 = response.data.drinks[0].strIngredient3
+    let drinkMeasurements3 = response.data.drinks[0].strMeasure3
+    let drinkRecipe3 = ` ${drinkMeasurements3} ${drinkIngredients3} `
+    if (drinkRecipe3 !== ' null null ') {
+      drinkRecipe += drinkRecipe3
+    }
+
+    let drinkIngredients4 = response.data.drinks[0].strIngredient4
+    let drinkMeasurements4 = response.data.drinks[0].strMeasure4
+    let drinkRecipe4 = ` ${drinkMeasurements4} ${drinkIngredients4} `
+    if (drinkRecipe4 !== ' null null ') {
+      drinkRecipe += drinkRecipe4
+    }
+    
+    let drinkIngredients5 = response.data.drinks[0].strIngredient5
+    let drinkMeasurements5 = response.data.drinks[0].strMeasure5
+    let drinkRecipe5 = ` ${drinkMeasurements5} ${drinkIngredients5} `
+    if (drinkRecipe5 !== ' null null ') {
+      drinkRecipe += drinkRecipe5
+    }
+
+    let drinkIngredients6 = response.data.drinks[0].strIngredient6
+    let drinkMeasurements6 = response.data.drinks[0].strMeasure6
+    let drinkRecipe6 = ` ${drinkMeasurements6} ${drinkIngredients6} `
+    if (drinkRecipe6 !== ' null null ') {
+      drinkRecipe += drinkRecipe6
+    }
+    
+    let drinkIngredients7 = response.data.drinks[0].strIngredient7
+    let drinkMeasurements7 = response.data.drinks[0].strMeasure7
+    let drinkRecipe7 = ` ${drinkMeasurements7} ${drinkIngredients7} `
+    if (drinkRecipe7 !== ' null null ') {
+      drinkRecipe += drinkRecipe7
+    }
+
+    let drinkIngredients8 = response.data.drinks[0].strIngredient8
+    let drinkMeasurements8 = response.data.drinks[0].strMeasure8
+    let drinkRecipe8 = ` ${drinkMeasurements8} ${drinkIngredients8} `
+    if (drinkRecipe8 !== ' null null ') {
+      drinkRecipe += drinkRecipe8
+    }
+    
+    let drinkIngredients9 = response.data.drinks[0].strIngredient9
+    let drinkMeasurements9 = response.data.drinks[0].strMeasure9
+    let drinkRecipe9 = ` ${drinkMeasurements9} ${drinkIngredients9} `
+    if (drinkRecipe9 !== ' null null ') {
+      drinkRecipe += drinkRecipe9
+    }
+  
+    const drinkIngredients10 = response.data.drinks[0].strIngredient10
+    const drinkMeasurements10 = response.data.drinks[0].strMeasure10
+    const drinkRecipe10 = ` ${drinkMeasurements10} ${drinkIngredients10} `
+    if (drinkRecipe10 !== ' null null ') {
+      drinkRecipe += drinkRecipe10
+    }
+    
+    const drinkIngredients11 = response.data.drinks[0].strIngredient11
+    const drinkMeasurements11 = response.data.drinks[0].strMeasure11
+    const drinkRecipe11 = ` ${drinkMeasurements11} ${drinkIngredients11} `
+    if (drinkRecipe11 !== ' null null ') {
+      drinkRecipe += drinkRecipe11
+    }
+
+    const drinkIngredients12 = response.data.drinks[0].strIngredient12
+    const drinkMeasurements12 = response.data.drinks[0].strMeasure12
+    const drinkRecipe12 = ` ${drinkMeasurements12} ${drinkIngredients12} `
+    if (drinkRecipe12 !== ' null null ') {
+      drinkRecipe += drinkRecipe12
+    }
+    
+    const drinkIngredients13 = response.data.drinks[0].strIngredient13
+    const drinkMeasurements13 = response.data.drinks[0].strMeasure13
+    const drinkRecipe13 = ` ${drinkMeasurements13} ${drinkIngredients13} `
+    if (drinkRecipe13 !== ' null null ') {
+      drinkRecipe += drinkRecipe13
+    }
+
+    const drinkIngredients14 = response.data.drinks[0].strIngredient14
+    const drinkMeasurements14 = response.data.drinks[0].strMeasure14
+    const drinkRecipe14 = ` ${drinkMeasurements14} ${drinkIngredients14} `
+    if (drinkRecipe14 !== ' null null ') {
+      drinkRecipe += drinkRecipe14
+    }
+    
+    const drinkIngredients15 = response.data.drinks[0].strIngredient15
+    const drinkMeasurements15 = response.data.drinks[0].strMeasure15
+    const drinkRecipe15 = ` ${drinkMeasurements15} ${drinkIngredients15} `
+    if (drinkRecipe15 !== ' null null ') {
+      drinkRecipe += drinkRecipe15
+    }
+   
+    drinkData(drinkName, drinkImg, instruction, drinkRecipe)
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
 
-
+//INITIALIZING THE DROP DOWN DATA FOR ALL OF THE LIQOUR TYPES
 function initializeDropDownListeners() {
   document.querySelector('#bourbon-drink').addEventListener('change', onDropDownChange)
   document.querySelector('#brandy-drink').addEventListener('change', onDropDownChange) 
@@ -303,9 +405,10 @@ function initializeDropDownListeners() {
 }
 initializeDropDownListeners()
 
-function drinkData(drinkName, drinkPic, drinkIntructions) {
+//FUNCTION TO APPEND ALL PERTINENT API DATA TO THE DOM.
+function drinkData(drinkName, drinkPic, drinkIntructions, drinkRecipe) {
   
-  //
+  //creating a para for the drink name and appending it under the content div
   const name = document.createElement('p')
   name.innerText = drinkName
   document.querySelector('#content').append(name)
@@ -320,6 +423,11 @@ function drinkData(drinkName, drinkPic, drinkIntructions) {
   const instructions = document.createElement('p')
   instructions.innerText = drinkIntructions
   document.querySelector('#content').append(instructions)
+
+
+  const recipe = document.createElement('p')
+  recipe.innerText = drinkRecipe
+  document.querySelector('#content').append(recipe)
   
   //clearing the select field value back to "choose a cocktail"
   document.querySelector('#bourbon-drink').value = ''
