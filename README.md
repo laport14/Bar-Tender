@@ -1,7 +1,7 @@
 ## Project Name
 
 # Bar-Tender
-
+Project link: https://laport14.github.io/Bar-Tender/
 ## Project Description
 
 The project is going to be a cocktail based website that allows the user the ability to select drinks based on the liquor preference. Under each of the parent liqour category there will be a drop down of available drink names to choose from. When selecting the drink name, the drink name will be displayed, there will be a text field to show how the drink is made and a picture to represent the respective drink.

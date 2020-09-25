@@ -1,6 +1,6 @@
 // API docs https://www.thecocktaildb.com/api.php
 
-//GETTING THE API DATA AND PASSING THE DRINK NAMES, OF THE HARDCODED LIQUOR CHOICE, THROUGH THE OPTIONS VALUE FUNCTION
+//GETTING THE API DATA AND PASSING THE DRINK NAMES, OF THE RESPECTIVE LIQUOR CHOICE, THROUGH THE OPTIONS VALUE FUNCTION
 async function fetchData(liquor) {
   const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquor}`
   try {
