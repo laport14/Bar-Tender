@@ -1,11 +1,11 @@
 // API docs https://www.thecocktaildb.com/api.php
 
+//GETTING THE API DATA AND PASSING THE DRINK NAMES, OF THE HARDCODED LIQUOR CHOICE, THROUGH THE OPTIONS VALUE FUNCTION
 async function fetchData(liquor) {
   const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquor}`
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValues(drinkName)
     
   } catch (error) {
@@ -15,9 +15,8 @@ async function fetchData(liquor) {
 
 fetchData('Bourbon')
 
-//FOR EACH 
+//FOR EACH DRINK, GRABBING THE VALUE OF DRINK NAME AND APPENING THE DRINK NAME UNDER THE SELECT TAG, THIS IS REPEATED BELOW FOR THE RESPECTIVE LIQUOR CHOICES
 function optionValues(lists) {
-  // console.log(lists)
   const select = document.querySelector('#bourbon-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -34,7 +33,6 @@ async function fetchDataBrandy(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesBrandy(drinkName)
     
   } catch (error) {
@@ -45,7 +43,6 @@ async function fetchDataBrandy(liquor) {
 fetchDataBrandy('Brandy')
 
 function optionValuesBrandy(lists) {
-  // console.log(lists)
   const select = document.querySelector('#brandy-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -63,7 +60,6 @@ async function fetchDataCognac(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesCognac(drinkName)
     
   } catch (error) {
@@ -74,7 +70,6 @@ async function fetchDataCognac(liquor) {
 fetchDataCognac('Cognac')
 
 function optionValuesCognac(lists) {
-  // console.log(lists)
   const select = document.querySelector('#cognac-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -91,7 +86,6 @@ async function fetchDataGin(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesGin(drinkName)
     
   } catch (error) {
@@ -103,7 +97,6 @@ fetchDataGin('Gin')
 
 
 function optionValuesGin(lists) {
-  // console.log(lists)
   const select = document.querySelector('#gin-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -120,7 +113,6 @@ async function fetchDataRum(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesRum(drinkName)
     
   } catch (error) {
@@ -131,7 +123,6 @@ async function fetchDataRum(liquor) {
 fetchDataRum('Rum')
 
 function optionValuesRum(lists) {
-  // console.log(lists)
   const select = document.querySelector('#rum-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -149,7 +140,6 @@ async function fetchDataRye(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesRye(drinkName)
     
   } catch (error) {
@@ -160,7 +150,6 @@ async function fetchDataRye(liquor) {
 fetchDataRye('Rye Whiskey')
 
 function optionValuesRye(lists) {
-  // console.log(lists)
   const select = document.querySelector('#rye-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -177,7 +166,6 @@ async function fetchDataScotch(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesScotch(drinkName)
     
   } catch (error) {
@@ -188,7 +176,6 @@ async function fetchDataScotch(liquor) {
 fetchDataScotch('Scotch')
 
 function optionValuesScotch(lists) {
-  // console.log(lists)
   const select = document.querySelector('#scotch-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -206,7 +193,6 @@ async function fetchDataVodka(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesVodka(drinkName)
     
   } catch (error) {
@@ -217,7 +203,6 @@ async function fetchDataVodka(liquor) {
 fetchDataVodka('Vodka')
 
 function optionValuesVodka(lists) {
-  // console.log(lists)
   const select = document.querySelector('#vodka-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -234,9 +219,7 @@ async function fetchDataWhiskey(liquor) {
   try {
     const response = await axios.get(url)
     let drinkName = response.data.drinks
-    // console.log(drinkName)
     optionValuesWhiskey(drinkName)
-    
   } catch (error) {
     console.log(`Error: ${error}`)
   }
@@ -245,7 +228,6 @@ async function fetchDataWhiskey(liquor) {
 fetchDataWhiskey('Whiskey')
 
 function optionValuesWhiskey(lists) {
-  // console.log(lists)
   const select = document.querySelector('#whiskey-drink')
     let results = lists.forEach((drink) => {
     const option = document.createElement('option')
@@ -262,8 +244,6 @@ function onDropDownChange(event) {
   event.preventDefault()
   const drinkId = event.srcElement.id //retrieving the object that fired the change event! Janice helped with this one. 
   const optionValue = document.querySelector(`#${drinkId}`).value
-  // debugger
-  console.log(optionValue)
   getDrink(optionValue)
 }
 
@@ -271,7 +251,6 @@ function onDropDownChange(event) {
 async function getDrink(drink) {
 
   const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
-  console.log(url)
   removeAll()
   try {
     const response = await axios.get(url)
@@ -391,7 +370,7 @@ async function getDrink(drink) {
   }
 }
 
-//INITIALIZING THE DROP DOWN DATA FOR ALL OF THE LIQOUR TYPES
+//INITIALIZING THE DROP DOWN DATA FOR ALL OF THE LIQOUR TYPES ON THE CHANGE OF THE SELECT TAG
 function initializeDropDownListeners() {
   document.querySelector('#bourbon-drink').addEventListener('change', onDropDownChange)
   document.querySelector('#brandy-drink').addEventListener('change', onDropDownChange) 
@@ -424,7 +403,7 @@ function drinkData(drinkName, drinkPic, drinkIntructions, drinkRecipe) {
   instructions.innerText = drinkIntructions
   document.querySelector('#content').append(instructions)
 
-
+  //creating a para for the drink recipe and appending it below the instructions
   const recipe = document.createElement('p')
   recipe.innerText = drinkRecipe
   document.querySelector('#content').append(recipe)

@@ -82,7 +82,6 @@ https://www.figma.com/file/zHi57d0hsaF6NnNnXMsaI1/Bar-Tender?node-id=0%3A1
 ### MVP/PostMVP
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Find and use external api with pertinent data that meets project description requirements
 - Nav bar with the liquor choices and a drop down under each liquor with the respective cocktails listed
@@ -94,21 +93,17 @@ https://www.figma.com/file/zHi57d0hsaF6NnNnXMsaI1/Bar-Tender?node-id=0%3A1
 - Add a randomization button that will display a random drink for the user. Allow the website to choose the drink for you.
 - Pop up when loading the website that asks the user if they are 21 and up.
 - Animated CSS styling in the background of the webpage.
-- Incorporate external links to bar related gear and tutorials
+- Ingredients list added to the page for each drink.
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
 |Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
-|Sept 21| Project Approval & HTML Structure | Incomplete
-|Sept 22| CSS & Javascript Structure | Incomplete
-|Sept 23| Completion of Javascript & MVP requirements | Incomplete
-|Sept 24| Post MVP/ Advanced CSS styling | Incomplete
+|Sept 21| Project Approval & HTML Structure | Complete
+|Sept 22| CSS & Javascript Structure | Complete
+|Sept 23| Completion of Javascript & MVP requirements | Complete
+|Sept 24| Post MVP/ Advanced CSS styling | Partial Completion
 |Sept 25| Final Touches & Presentations | Incomplete
 
 ## Priority Matrix
@@ -119,29 +114,41 @@ https://docs.google.com/drawings/d/14rypvt5jJaeEfUWLarkFZAKw1Gv--qGMizwtBMiGqbc/
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML Structure | M | 3hrs|  |  |
-| Pulling Drink Names from API | H | 3hrs|  |  |
-| Building Selector or Dropdown from Drink Names | H | 3hrs|  |  |
-| Selector data fulfilled for All Liquor types | H | 3hrs|  |  |
-| DOM work, w/ event listener for Drink Selection | H | 3hrs|  |  |
-| Pulling API data for Drink Info | H | 3hrs|  |  |
-| Appending Drink Data via the DOM | H | 3hrs|  |  |
-| Base Page styling | H | 2.5hrs|  |  |
-| Page Styling with Appended MTL | H | 3hrs|  |  |
-| JS Functions executing | H | 3hrs|  |  |
-| Debugging | H | 4hrs|  |  |
-| Troubleshooting and Adjustments | H | 4hrs|  |  |
-| Total | H | 37.5hrs|  |  |
+| HTML Structure | M | 3hrs| 2.5hrs | 2.5hrs |
+| Pulling Drink Names from API | H | 3hrs| 1.5hrs | 1.5hrs |
+| Building Selector or Dropdown from Drink Names | H | 3hrs| 4hrs | 4hrs |
+| Selector data fulfilled for All Liquor types | H | 3hrs| 2hrs | 2hrs |
+| DOM work, w/ event listener for Drink Selection | H | 3hrs| 4hrs | 4hrs |
+| Pulling API data for Drink Info | H | 3hrs| 1.5hrs | 1.5hrs |
+| Appending Drink Data via the DOM | H | 3hrs| 2hrs | 2hrs |
+| Base Page styling | H | 2.5hrs| 2hrs | 2hrs |
+| Page Styling with Appended MTL | H | 3hrs| 1.5hrs | 1.5hrs |
+| JS Functions executing | H | 3hrs| 4hrs | 4hrs |
+| Debugging | H | 4hrs| 4hrs | 4hrs |
+| Troubleshooting and Adjustments | H | 4hrs| 3hrs | 3hrs |
+| Total | H | 37.5hrs| 32hrs | 32hrs |
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+Was able to create logic to append drink instructions and measurements to the webpage. The difficulty was with the way the api data was structured. The conditional below appends the drink measurements and the drink ingredients to the page if null does not exist for both the drink measurements and the drink ingredients.  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+let drinkRecipe = 'Ingredients: '
+    let drinkIngredients1 = response.data.drinks[0].strIngredient1  
+    let drinkMeasurements1 = response.data.drinks[0].strMeasure1
+    let drinkRecipe1 = `${drinkMeasurements1} ${drinkIngredients1}`
+    if (drinkRecipe1 !== 'null null') {
+      drinkRecipe = `Ingredients: ${drinkRecipe1}`
+    } 
+    let drinkIngredients2 = response.data.drinks[0].strIngredient2
+    let drinkMeasurements2 = response.data.drinks[0].strMeasure2
+    let drinkRecipe2 = ` ${drinkMeasurements2} ${drinkIngredients2} `
+    if (drinkRecipe2 !== ' null null ') {
+      drinkRecipe += drinkRecipe2
+    }
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.
+ Changed the liquor choices based on the most common liquors. Data had non-alcoholic options thus hardcoding the values in.
+
+ The dropdown is truly a select tag, changed this to accommodate for the 'change' event listener to trigger appending the data to webpage.
